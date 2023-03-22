@@ -1,0 +1,22 @@
+This smart contract is a vesting contract for supporting projects. Users can 
+allocate support to a project, and they receive a defined amount of tokens in
+ intervals.
+
+The contract has several strengths. Firstly, it uses the OpenZeppelin library,
+ which is well-audited and widely used in the industry. Secondly, the contract 
+ has a clear set of constants that define the soft cap, hard cap, and other
+  project parameters. Thirdly, the contract has several modifiers to ensure 
+  that only authorized users can perform certain actions, which increases its security.
+
+However, there are some potential security issues that need to be addressed. 
+Firstly, the setWhitelist function does not have a mechanism to remove a whitelist 
+address once it has been added. This could be exploited by an attacker to add an 
+unauthorized address to the whitelist. Secondly, the support function does not
+ have any validation to ensure that the user has not exceeded the hard cap per 
+ wallet or hard cap for the whitelist. An attacker could exploit this by repeatedly 
+ supporting the project from different wallets or whitelisted addresses, exceeding
+  the hard cap, and draining the contract's funds.
+
+Overall, the contract has some strong features, but there are some potential 
+security issues that need to be addressed before it can be deployed in a production 
+environment.
